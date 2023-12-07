@@ -1,17 +1,46 @@
-import { useState } from "react";
 import "./App.css";
-import Login from "./Login/login";
-import Player from "./Player/Player";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Dashboard from "./pages/dashboard/Dashboard";
+import Login from "./pages/login/Login";
+import Verify from "./pages/login/Verify";
+import { LoginDetailProvider } from "./context/loginContext";
+import PrivateRoute from "./components/PrivateRoute";
+import { SongListProvider } from "./context/songContext";
 
-function App() {
-  const [loggedIn, setLoggedIn] = useState(false);
-
+export default function App() {
   return (
-    <div className="App">
-      {loggedIn ? <Player setLoggedIn={setLoggedIn} /> :
-      <Login setLoggedIn={setLoggedIn} />}
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <LoginDetailProvider>
+              <Login />
+            </LoginDetailProvider>
+          }
+        />
+        <Route
+          path="/verify"
+          element={
+            <LoginDetailProvider>
+              <Verify />
+            </LoginDetailProvider>
+          }
+        />
+
+        <Route
+          path="/dashboard"
+          element={
+            <PrivateRoute>
+              <SongListProvider>
+                <Dashboard />
+              </SongListProvider>
+            </PrivateRoute>
+          }
+        />
+
+        <Route path="*" element={"Something went wrong....."} />
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;
