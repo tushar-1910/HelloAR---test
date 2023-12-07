@@ -1,0 +1,14 @@
+.otp_input{
+    display: flex;
+    justify-content: space-around;
+}
+
+.input_box {
+    width: 75px;
+    height: 75px;
+    border-color: #D0D3D4;
+    font-size: 50px;
+    text-align: center;
+    border-radius: 10px;
+    color: #101920;
+}

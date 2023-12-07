@@ -1,0 +1,48 @@
+.navbar {
+  height: 100%;
+  width: 25%;
+  background: #fff;
+  box-shadow: -1px 0px 0px 0px rgba(0, 0, 0, 0.05) inset;
+  display: flex;
+  flex-direction: column;
+}
+
+.audio_container {
+  height: 100%;
+  width: 75%;
+}
+
+.logout_button {
+  display: flex;
+  align-items: center;
+  order: 1;
+  margin-top: auto;
+  margin-bottom: 30px;
+}
+
+.logout_button:hover {
+  background: #e6f7ff;
+  border-right: 5px solid #1890ff;
+  cursor: pointer;
+}
+
+.songs_button {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  background: #e6f7ff;
+  border-right: 5px solid #1890ff;
+}
+
+.songs_button:hover {
+  cursor: pointer;
+}
+
+.logo {
+  color: #552583;
+  text-align: center;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 40px;
+}
